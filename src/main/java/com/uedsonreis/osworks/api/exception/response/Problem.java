@@ -1,4 +1,6 @@
-package com.uedsonreis.osworks.api.controllers.domain.model;
+package com.uedsonreis.osworks.api.exception.response;
+
+import java.time.LocalDateTime;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,11 +13,10 @@ import lombok.Setter;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Client {
+public class Problem {
 
-	private Long id;
-	private String name;
-	private String email;
-	private String phone;
+	private Integer status;
+	private LocalDateTime dateTime;
+	private String title;
 	
 }
