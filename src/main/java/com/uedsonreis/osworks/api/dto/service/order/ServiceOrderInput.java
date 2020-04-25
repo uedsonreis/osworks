@@ -1,7 +1,7 @@
-package com.uedsonreis.osworks.api.exception.response;
+package com.uedsonreis.osworks.api.dto.service.order;
 
-import java.time.OffsetDateTime;
-import java.util.List;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
@@ -18,11 +18,15 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonInclude(Include.NON_NULL)
-public class Problem {
+public class ServiceOrderInput {
 
-	private Integer status;
-	private String title;
-	private OffsetDateTime dateTime;
+	@NotNull
+	private Long clientId;
+
+	@NotBlank
+	private String description;
 	
-	private List<ProblemField> fields;
+	@NotNull
+	private Double price;
+	
 }

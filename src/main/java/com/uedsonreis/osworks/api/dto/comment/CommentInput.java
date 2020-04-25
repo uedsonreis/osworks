@@ -1,7 +1,6 @@
-package com.uedsonreis.osworks.api.exception.response;
+package com.uedsonreis.osworks.api.dto.comment;
 
-import java.time.OffsetDateTime;
-import java.util.List;
+import javax.validation.constraints.NotBlank;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
@@ -18,11 +17,9 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonInclude(Include.NON_NULL)
-public class Problem {
+public class CommentInput {
 
-	private Integer status;
-	private String title;
-	private OffsetDateTime dateTime;
-	
-	private List<ProblemField> fields;
+	@NotBlank
+	private String description;
+
 }

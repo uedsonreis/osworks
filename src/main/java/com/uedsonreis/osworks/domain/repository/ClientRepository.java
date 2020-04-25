@@ -10,7 +10,8 @@ import com.uedsonreis.osworks.domain.model.Client;
 @Repository
 public interface ClientRepository extends JpaRepository<Client, Long> {
 
-	public List<Client> findByName(String name);
-	public List<Client> findByNameContaining(String name);
-	
+	List<Client> findByName(String name);
+	List<Client> findByNameContaining(String name);
+	Client findByEmail(String email);
+
 }

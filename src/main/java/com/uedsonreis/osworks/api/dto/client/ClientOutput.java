@@ -1,7 +1,4 @@
-package com.uedsonreis.osworks.api.exception.response;
-
-import java.time.OffsetDateTime;
-import java.util.List;
+package com.uedsonreis.osworks.api.dto.client;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
@@ -18,11 +15,11 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonInclude(Include.NON_NULL)
-public class Problem {
+public class ClientOutput {
 
-	private Integer status;
-	private String title;
-	private OffsetDateTime dateTime;
+	private Long id;
+	private String name;
+	private String email;
+	private String phone;
 	
-	private List<ProblemField> fields;
 }

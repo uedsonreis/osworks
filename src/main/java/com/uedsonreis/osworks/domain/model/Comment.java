@@ -1,9 +1,12 @@
 package com.uedsonreis.osworks.domain.model;
 
+import java.time.OffsetDateTime;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -19,13 +22,15 @@ import lombok.Setter;
 @AllArgsConstructor
 @EqualsAndHashCode(of="id")
 @Entity
-public class Client {
+public class Comment {
 
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-
-	private String name;
-	private String email;
-	private String phone;
+	
+	private String description;
+	private OffsetDateTime sendDate;
+	
+	@ManyToOne
+	private ServiceOrder serviceOrder;
 
 }
